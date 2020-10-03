@@ -1,10 +1,19 @@
 import React from "react";
 
-export const ChatMessage: React.FC = () => {
+type names = {
+  name: string;
+  message: string;
+  recieved: boolean;
+};
+interface Props {
+  message: names;
+}
+
+export const ChatMessage: React.FC<Props> = ({ message }) => {
   return (
-    <p className="Chat__message">
-      <span className="chat__name">Rafeh Qazi</span>
-      This is a message
+    <p className={`Chat__message ${message.recieved && "Chat__reciever"}`}>
+      <span className="chat__name">{message.name}</span>
+      {message.message}
       <span className="chat__timestamp">{new Date().toUTCString()}</span>
     </p>
   );

@@ -141,6 +141,9 @@
       font-size: xx-small;
     }
   }
+  .Chat__message:last-child {
+    margin-bottom: 0px !important;
+  }
   .Chat__reciever {
     margin-left: auto;
     background: #dcf8c6;
